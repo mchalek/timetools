@@ -1,0 +1,31 @@
+#!/usr/bin/python
+
+import time,sys
+
+if len(sys.argv) < 2:
+  print("must provide a time stamp")
+  sys.exit()
+
+stamp = int(sys.argv[1])
+
+ms = time.ctime(stamp/1000).strip()
+msYear = int(ms.split(' ')[-1])
+
+sec = time.ctime(stamp).strip()
+secYear = int(sec.split(' ')[-1])
+
+hr = time.ctime(stamp*3600).strip()
+hrYear = int(hr.split(' ')[-1])
+
+if msYear > 2005 and msYear < 2016:
+    print('(msec) ' + ms)
+elif secYear > 2005 and secYear < 2016:
+    print('( sec) ' + sec)
+elif hrYear > 2005 and hrYear < 2016:
+    print('(  hr) ' + hr)
+else:
+    print('(msec) ' + ms)
+    print('( sec) ' + sec)
+    print('(  hr) ' + hr)
+
+

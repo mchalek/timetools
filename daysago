@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+import time,sys
+
+if len(sys.argv) < 2:
+  print("must provide # of days back")
+  sys.exit()
+
+MSEC_PER_DAY=1000*60*60*24
+
+daysback = int(sys.argv[1])
+
+print(int(time.time()*1000)-(daysback*MSEC_PER_DAY))
