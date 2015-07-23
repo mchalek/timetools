@@ -2,12 +2,12 @@
 
 import sys
 
-def get_timestamp(dateStr):                                                     
-    from dateutil import parser                                                 
-    from dateutil.tz import tzutc                                               
-    from calendar import timegm                                                 
-    dt = parser.parse(dateStr, tzinfos=tzutc)                                   
-    return timegm(dt.utctimetuple())                                            
+def get_timestamp(dateStr):
+    from dateutil import parser
+    from dateutil.tz import tzutc
+    from calendar import timegm
+    dt = parser.parse(dateStr, tzinfos=tzutc)
+    return 1000*timegm(dt.utctimetuple())
 
 if len(sys.argv) < 2:
     print('SYNTAX: %s date_string (format of your choosing)' % sys.argv[0])
